@@ -12,3 +12,18 @@ function square(num) {
 const subtractTwo = function (num) {
   return num - 2;
 }
+// ------------------------------------------------------------------
+// Q3 - What are First Class Functions?
+// function can be treated as a variable (everything a var can do a function can also do)
+
+function displaySub2(fn) {
+  num = 10;
+  console.log(`${num} - 2 = ` + fn(num))
+}
+// ------------------------------------------------------------------
+//Q4 What is IIFE?
+// Immediately Invoked Function Expression
+
+(function (name = 'bawa') {
+  console.log("Your name is " + name)
+})();
