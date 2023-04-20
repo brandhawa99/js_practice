@@ -27,3 +27,12 @@ function displaySub2(fn) {
 (function (name = 'bawa') {
   console.log("Your name is " + name)
 })();
+// ------------------------------------------------------------------
+// Q5 - IIFE O/P Based Question
+(function (x) {
+  return (function (y) {
+    console.log(x)
+  })(2)
+})(1)
+// ------------------------------------------------------------------
+
