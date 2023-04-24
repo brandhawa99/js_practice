@@ -90,6 +90,10 @@ function funcName() {
 // ------------------------------------------------------------------
 
 // Q9 - Function hoisting  - O/P Based Question 
+//  What gets console logged 
+//  Answer: undefined because the local scope 
+// x has gone through part one of the two step process
+// where it gets initialized  but not assigned a value
 
 var x = 21;
 
@@ -98,6 +102,65 @@ var fun = function () {
   console.log(x);
   var x = 20;
 }
-fun();
+// fun();
 
+// ------------------------------------------------------------------
+// Q10 - Params vs Arguments
+
+function sum(num1, num2) { //params
+  return num1 + num2
+}
+sum(2, 3) //arguments 
+
+// Spread vs Rest operator 
+// res operator in this situation 
+function multi(...num) {
+  return num[0] * num[1];
+}
+const arr = [2, 3]
+// spread operator in this situation
+// multi(...arr);
+
+// ------------------------------------------------------------------
+// Q 11 - Params vs Arguments O/P Question
+
+// What is the output ?????
+// Answer: There is an error the rest operator must be last 
+// function whatout(a,b, ...num, x,y){
+//   console.log(x,y); 
+// }
+
+// ------------------------------------------------------------------
+// Q 12 - What is a callback function 
+
+let nums = [1, 2, 3, 4];
+// this is the callback 
+function x2(num) {
+  return (num * 2);
+}
+// let vals = nums.map(x2)
+// console.log(vals)
+
+
+// ------------------------------------------------------------------
+// Q:13 - Arrow Functions
+// 1 - Syntax 
+// 2 - Implicit "return" keyword
+const add = (num1, num2) => num1 + num2
+
+// 3 - No arguemnts keyword in arrow function 
+// 4 - "this" keyword
+let user = {
+  user: "bawa",
+  rc1: () => {
+    console.log("sub to " + this.user)
+  },
+  rc2() {
+    console.log("sub to " + this.user);
+  }
+}
+// will be undefined becasue the the is scoped to the global scope 
+user.rc1();
+// will be bawa because scoped to local scope 
+user.rc2();
 // ------------------------------------------------------------------
