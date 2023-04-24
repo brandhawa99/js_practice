@@ -36,17 +36,18 @@ function displaySub2(fn) {
 })(1)
 // ------------------------------------------------------------------
 // Q6 - Function Scope
+// function check its local scope if var is not found it keeps going out until it finds the var or the var doesn't exist
 // The following variables are defined in the global scope
 const num1 = 20;
 const num2 = 3;
-const name = "Chamakh";
+const name = "Baltej";
 
 // This function is defined in the global scope
 function multiply() {
   return num1 * num2;
 }
 
-multiply(); // Returns 60
+console.log(multiply()) // Returns 60
 
 // A nested function example
 function getScore() {
@@ -60,7 +61,43 @@ function getScore() {
   return add();
 }
 
-getScore(); // Returns "Chamakh scored 5"
+console.log(getScore()); // Returns "Baltej scored 5"
+
 
 // ------------------------------------------------------------------
+// Q7 - Function Scope - O/P Based Question
+// What if you change i from let to var 
+// A: With var "i" get assigned to the global scope 
+// This means its changed the value of i in the settimeout callback
+// with let i gets called with its function scope 
+
+// for (let i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 100)
+// }
+// ------------------------------------------------------------------
+
+// Q8 - Function hoisting 
+
+funcName();
+
+function funcName() {
+  console.log("Bawa Coder");
+
+}
+
+// ------------------------------------------------------------------
+
+// Q9 - Function hoisting  - O/P Based Question 
+
+var x = 21;
+
+
+var fun = function () {
+  console.log(x);
+  var x = 20;
+}
+fun();
+
 // ------------------------------------------------------------------
